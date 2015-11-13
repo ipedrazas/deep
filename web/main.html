@@ -1,0 +1,51 @@
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+  <div class="mdl-tabs__tab-bar">
+      <a href="#deploy-panel" class="mdl-tabs__tab is-active">Deploys</a>
+      <a href="#cert-panel" class="mdl-tabs__tab">Dependencies</a>
+  </div>
+
+    <div class="mdl-tabs__panel is-active" id="deploy-panel">
+
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col"></div>
+            <div class="mdl-cell mdl-cell--5-col">
+                <h2>Deploys</h2>
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                    <thead>
+                    <tr>
+                      <th class="mdl-data-table__cell--non-numeric">Created</th>
+                      <th>Image</th>
+                      <th>Namespace</th>
+                      <th>Source</th>
+                      <th>Target</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                        <tr ng-repeat="deploy in deploys">
+                            <td>{{deploy.created}}</td>
+                            <td>{{deploy.image}}</td>
+                            <td>{{deploy.namespace}}</td>
+                            <td>{{deploy.source}}</td>
+                            <td>{{deploy.target}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div><!-- End of mdl-grid -->
+    </div><!-- End of mdl-tabs panel -->
+
+  <div class="mdl-tabs__panel" id="cert-panel">
+      <div class="mdl-grid">
+
+        <div class="mdl-cell mdl-cell--2-col"></div>
+            <div class="mdl-cell mdl-cell--5-col">
+                <h2>Dependencies</h2>
+                <ul ng-repeat="dependency in dependencies">{{dependency.name}}</ul>
+            </div>
+
+
+        </div>
+  </div>
+
+</div>

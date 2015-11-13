@@ -1,0 +1,13 @@
+FROM alpine:3.2
+MAINTAINER Ivan Pedrazas <ipedrazas@gmail.com>
+
+RUN apk add --update \
+      python3 \
+      curl \
+      bash  && \
+      pip3 install eve
+
+COPY api /app
+
+
+CMD [ "python", "/app/api.py" ]

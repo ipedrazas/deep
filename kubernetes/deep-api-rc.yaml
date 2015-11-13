@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: deep-api
+  labels:
+    name: deep-api
+    deep: api
+spec:
+  replicas: 1
+  selector:
+    name: deep-api
+    deep: api
+  template:
+    metadata:
+      labels:
+        name: deep-api
+        deep: api
+    spec:
+      containers:
+      - name: deep-api
+        image: ipedrazas/deep-api
+        ports:
+        - containerPort: 5000
