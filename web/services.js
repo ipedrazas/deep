@@ -9,9 +9,13 @@ app.factory("api", function($q, $http) {
   };
 
 
+  var getWebhooks = function(){
+    return $http.get( DEPDEPHOST + '/webhooks')
+  };
+
   return {
     getDeploys: getDeploys,
     getDependencies: getDependencies,
-
+    getWebhooks: getWebhooks,
   };
 });

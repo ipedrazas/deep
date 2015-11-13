@@ -1,4 +1,4 @@
-var DEPDEPHOST = "http://deep-api-svc:5000"
+var DEPDEPHOST = "http://deep-api.ipedrazas.k8s.co.uk:5000"
 
 var app = angular.module('dsp', ['ngRoute']);
 
@@ -20,3 +20,9 @@ app.config(['$routeProvider', '$locationProvider',
           requireBase: false
         });
 }]);
+
+app.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    }
+]);

@@ -13,17 +13,21 @@ function makeid()
 
 app.controller('MainCtrl', function($scope, $location, api) {
 
-
-
-    api.getDependencies().success(function(data){
-        console.log(data._items);
-        $scope.dependencies = data;
-    });
+    // api.getDependencies().success(function(data){
+    //     console.log(data._items);
+    //     $scope.dependencies = data._items;
+    // });
 
 
     api.getDeploys().success(function(data){
         console.log(data._items);
         $scope.deploys = data._items;
     });
+
+    api.getWebhooks().success(function(data){
+        console.log(data._items);
+        $scope.webhooks = data._items;
+    });
+
 
 });

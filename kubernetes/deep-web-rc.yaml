@@ -9,6 +9,7 @@ spec:
   replicas: 1
   selector:
     name: deep-web
+    deep: web
   template:
     metadata:
       labels:
@@ -17,6 +18,6 @@ spec:
     spec:
       containers:
       - name: deep-web
-        image: ipedrazas/deep-web
+        image: ipedrazas/deep-web:latest
         ports:
-        - containerPort: 8000
+        - containerPort: 80

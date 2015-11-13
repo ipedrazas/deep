@@ -4,10 +4,11 @@ metadata:
   name: deep-web-svc
   labels:
     name: deep-web-svc
+    deep: web
 spec:
   type: LoadBalancer
   ports:
     - port: 80
-      targetPort: 8000
+      targetPort: 80
   selector:
     deep: web
