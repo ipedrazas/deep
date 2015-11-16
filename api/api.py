@@ -10,7 +10,7 @@ cors = CORS(app)
 
 @app.route("/version")
 def version():
-    return 'Landscape v0.0.2'
+    return 'Deep API v0.0.2'
 
 
 @app.route("/debug", methods=['POST'])
