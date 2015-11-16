@@ -22,10 +22,13 @@ PUBLIC_ITEM_METHODS = ['GET', 'PATCH', 'PUT', 'POST', 'DELETE']
 deploys = {
     'schema': {
         'Timestamp': {
-            'type': 'string'
+            'type': 'number'
         },
         'Images': {
-            'type': 'string'
+            'type': 'list',
+            'schema': {
+                'type': 'string'
+            }
         },
         'tag': {
             'type': 'string'
