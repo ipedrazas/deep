@@ -24,7 +24,7 @@
                         <tr ng-repeat="deploy in deploys">
                             <td>{{deploy.Timestamp  | date:'dd-MM-yyyy HH:mm:ss Z'}}</td>
                             <td>
-                              <ul ng-repeat="img in deploy.images">
+                              <ul ng-repeat="img in deploy.Images">
                                 <li>{{img}}</li>
                               </ul>
                             </td>
