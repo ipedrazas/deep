@@ -22,11 +22,15 @@
                   </thead>
                   <tbody>
                         <tr ng-repeat="deploy in deploys">
-                            <td>{{deploy.created}}</td>
-                            <td>{{deploy.image}}</td>
-                            <td>{{deploy.namespace}}</td>
-                            <td>{{deploy.source}}</td>
-                            <td>{{deploy.target}}</td>
+                            <td>{{deploy.Timestamp  | date:'dd-MM-yyyy HH:mm:ss Z'}}</td>
+                            <td>
+                              <ul ng-repeat="img in deploy.images">
+                                <li>{{img}}</li>
+                              </ul>
+                            </td>
+                            <td>{{deploy.Namespace}}</td>
+                            <td>{{deploy.Source}}</td>
+                            <td>{{deploy.Target}}</td>
                         </tr>
                     </tbody>
                 </table>
