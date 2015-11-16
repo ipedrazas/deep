@@ -21,27 +21,32 @@ PUBLIC_ITEM_METHODS = ['GET', 'PATCH', 'PUT', 'POST', 'DELETE']
 
 deploys = {
     'schema': {
-        'created': {
+        'Timestamp': {
             'type': 'string'
         },
-        'image': {
+        'Images': {
             'type': 'string'
         },
         'tag': {
             'type': 'string'
         },
-        'namespace': {
+        'Namespace': {
             'type': 'string'
         },
-        'target': {
+        'Target': {
             'type': 'string'
         },
-        'source': {
+        'Source': {
+            'type': 'string'
+        },
+        'Url': {
+            'type': 'string'
+        },
+        'Token': {
             'type': 'string'
         }
     }
 }
-
 
 webhooks = {
     'schema': {

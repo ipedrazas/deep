@@ -8,6 +8,11 @@ app = Eve()
 cors = CORS(app)
 
 
+@app.route("/version")
+def version():
+    return 'Landscape v0.0.2'
+
+
 @app.route("/debug", methods=['POST'])
 def add_link():
     pjson = json.loads(request.data)
