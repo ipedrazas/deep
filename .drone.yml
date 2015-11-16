@@ -49,5 +49,5 @@ deploy:
     token: $$TOKEN
     apiserver: $$APISERVER
     namespace: default
-    webhook: http://deep-api.ipedrazas.k8s.co.uk:5000/deploy
+    webhook: http://deep-api.ipedrazas.k8s.co.uk:5000/deploys
     webhook_token: 12345abcdf
