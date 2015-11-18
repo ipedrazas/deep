@@ -1,5 +1,5 @@
-// var DEPDEPHOST = "http://deep-api.ipedrazas.k8s.co.uk:5000"
-var DEPDEPHOST = "http://localhost:5000"
+var DEPDEPHOST = "http://deep-api.ipedrazas.k8s.co.uk:5000"
+// var DEPDEPHOST = "http://localhost:5000"
 
 var app = angular.module('dsp', ['ngRoute']);
 
