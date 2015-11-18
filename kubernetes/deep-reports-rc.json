@@ -1,0 +1,37 @@
+{
+  "apiVersion": "v1",
+  "kind": "ReplicationController",
+  "metadata": {
+    "name": "deep-reports",
+    "labels": {
+      "name": "deep-reports",
+      "deep": "reports"
+    }
+  },
+  "spec": {
+    "replicas": 1,
+    "template": {
+      "metadata": {
+        "name": "deep-reports",
+        "labels": {
+          "name": "deep-reports",
+          "deep": "reports"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "deep-reports",
+            "image": "ipedrazas/deep-reports:latest",
+           "ports":[
+                     {
+                        "containerPort": 5000,
+                        "protocol":"TCP"
+                     }
+                  ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -41,10 +41,30 @@ publish:
 
     branch: master
 
+publish:
+  docker:
+    environment:
+      - DOCKER_LAUNCH_DEBUG=true
+    username: $$DOCKER_USER
+    password: $$DOCKER_PASSWORD
+    email: $$DOCKER_EMAIL
+    repo: ipedrazas/deep-reports
+    file: Dockerfile.reports
+    tag:
+      - latest
+      - "$$BUILD_NUMBER"
+    when:
+      branch: master
+
+    branch: master
+
 deploy:
   kubernetes:
     image: ipedrazas/drone-kubernetes
-    replicationcontrollers: ["kubernetes/deep-api-rc.json", "kubernetes/deep-web-rc.json"]
+    replicationcontrollers:
+      - kubernetes/deep-api-rc.json
+      - kubernetes/deep-web-rc.json
+      - kubernetes/deep-reports-rc.json
     services: []
     token: $$TOKEN
     apiserver: $$APISERVER
