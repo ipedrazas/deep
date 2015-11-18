@@ -76,8 +76,11 @@
 
         <div class="mdl-cell mdl-cell--2-col"></div>
             <div class="mdl-cell mdl-cell--5-col">
-                <h2>Dependencies</h2>
-                <ul ng-repeat="dependency in dependencies">{{dependency.name}}</ul>
+                <h2>Tests</h2>
+                <ul ng-repeat="res in results">{{res.repo}}
+                    <div  ng-bind-html="renderHtml(res.testsuite)"></div>
+                </ul>
+
             </div>
 
 

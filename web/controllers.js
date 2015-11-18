@@ -11,7 +11,7 @@ function makeid()
 
 
 
-app.controller('MainCtrl', function($scope, $location, api) {
+app.controller('MainCtrl', function($scope, $location, api, $sce) {
 
     // api.getDependencies().success(function(data){
     //     console.log(data._items);
@@ -29,5 +29,16 @@ app.controller('MainCtrl', function($scope, $location, api) {
         $scope.webhooks = data._items;
     });
 
+    api.getTestResults().success(function(data){
+        console.log(data._items);
+        $scope.results = data._items;
+    });
+
+
+
+    $scope.renderHtml = function (htmlCode) {
+        console.log(htmlCode);
+        return $sce.trustAsHtml(htmlCode);
+    };
 
 });

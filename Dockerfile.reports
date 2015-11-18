@@ -1,0 +1,19 @@
+FROM alpine:3.2
+MAINTAINER Ivan Pedrazas <ipedrazas@gmail.com>
+
+RUN apk add --update \
+      python \
+      py-pip \
+      jq \
+      curl \
+      g++  \
+      libxml2-dev \
+      libxslt-dev
+
+
+RUN pip install eve flask-cors lxml
+
+COPY reports-api /app
+
+
+CMD [ "python", "/app/api.py" ]

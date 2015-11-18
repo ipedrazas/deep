@@ -13,9 +13,14 @@ app.factory("api", function($q, $http) {
     return $http.get( DEPDEPHOST + '/webhooks')
   };
 
+  var getTestResults = function(){
+    return $http.get( DEPDEPHOST + '/reports')
+  };
+
   return {
     getDeploys: getDeploys,
     getDependencies: getDependencies,
     getWebhooks: getWebhooks,
+    getTestResults: getTestResults,
   };
 });
