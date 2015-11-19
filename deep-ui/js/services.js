@@ -14,7 +14,7 @@ app.factory("api", function($q, $http) {
   };
 
   var getTestResults = function(){
-    return $http.get( DEPDEPHOST + '/reports')
+    return $http.get( REPORT_API + '/reports')
   };
 
   return {
