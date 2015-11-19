@@ -20,14 +20,18 @@ app.controller('MainCtrl', function($scope, $location, api, $sce) {
 
     console.log("Main");
 
+
+
     api.getDeploys().success(function(data){
-        console.log(data._items);
+        console.log(data);
         $scope.deploys = data._items;
+        $scope.numDeploys = data._meta.total;
     });
 
     api.getWebhooks().success(function(data){
         console.log(data._items);
         $scope.webhooks = data._items;
+        $scope.numBuilds = data._meta.total;
     });
 
     api.getTestResults().success(function(data){
