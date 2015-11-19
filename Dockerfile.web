@@ -1,4 +1,4 @@
 FROM nginx
 
 
-COPY web /usr/share/nginx/html
+COPY deep-ui /usr/share/nginx/html
