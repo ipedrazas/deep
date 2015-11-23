@@ -31,7 +31,7 @@
                   ],
             "livenessProbe":{
                 "httpGet": {
-                    "path": "",
+                    "path": "/_status/healthcheck",
                     "port": 5000
                 },
                 "initialDelaySeconds": 30,
