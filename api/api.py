@@ -2,7 +2,8 @@ from eve import Eve
 from flask.ext.cors import CORS
 import json
 from flask import request
-
+from pymongo import MongoClient
+import os
 
 app = Eve()
 cors = CORS(app)
@@ -11,6 +12,22 @@ cors = CORS(app)
 @app.route("/version")
 def version():
     return 'Deep API v0.0.2'
+
+
+@app.route("/_status/healthcheck")
+def healthcheck():
+    return 'Deep API v0.0.2'
+
+
+@app.route("/_status/healthcheck/db")
+def healthcheck_db():
+    mongo_host = os.environ.get('MONGODB_PORT_27017_TCP_ADDR')
+    mongo_port = os.environ.get('MONGODB_PORT_27017_TCP_PORT')
+    mongo_url = 'mongodb://' + mongo_host + ":" + mongo_port + '/'
+    client = MongoClient(mongo_url)
+    db = client.deep
+
+    return db.name
 
 
 @app.route("/debug", methods=['POST'])
