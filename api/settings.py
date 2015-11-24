@@ -102,4 +102,46 @@ webhooks = {
     }
 }
 
-DOMAIN = {'deploys': deploys, 'dependencies': {}, 'webhooks': webhooks}
+reports = {
+    'schema': {
+        'build': {'type': 'string'},
+        'branch': {'type': 'string'},
+        'repo': {'type': 'string'},
+        'report': {'type': 'string'},
+        'timestamp': {'type': 'string'}
+    }
+}
+
+components = {
+    'schema': {
+        'name': {'type': 'string'},
+        'repo': {'type': 'string'}
+
+    }
+}
+
+applications = {
+    'schema': {
+        'name': {'type': 'string'},
+        'components': {
+            'type': 'list',
+            'schema': {
+                'type': 'objectid',
+                'data_relation': {
+                    'resource': 'components',
+                    'field': '_id',
+                    'embeddable': True
+                },
+            }
+        }
+    }
+}
+
+
+DOMAIN = {
+    'deploys': deploys,
+    'webhooks': webhooks,
+    'reports': reports,
+    'components': components,
+    'applications': applications
+}
