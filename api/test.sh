@@ -12,3 +12,4 @@ done
 
 #http POST deep-api.ipedrazas.k8s.co.uk:5000/webhooks < webhooks.json
 
+http POST localhost:5000/components < components.json

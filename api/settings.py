@@ -137,11 +137,38 @@ applications = {
     }
 }
 
+healthchecks = {
+    'schema': {
+        'component': {'type': 'objectid'},
+        'application': {'type': 'objectid'},
+        'title': {'type': 'string'},
+        'endpoint': {'type': 'string'},
+        'timeout': {'type': 'number'},
+        'retries': {'type': 'number'}
+    }
+}
+
+checks = {
+    'schema': {
+        'healthcheck': {
+            'type': 'objectid',
+            'data_relation': {
+                'resource': 'healthchecks',
+                'field': '_id',
+                'embeddable': True
+            },
+        },
+        'healthy': {'type': 'boolean'},
+    }
+}
+
 
 DOMAIN = {
     'deploys': deploys,
     'webhooks': webhooks,
     'reports': reports,
     'components': components,
-    'applications': applications
+    'applications': applications,
+    'healthchecks': healthchecks,
+    'checks': checks,
 }
