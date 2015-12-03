@@ -57,8 +57,10 @@ reports = {
         'build': {'type': 'string'},
         'branch': {'type': 'string'},
         'repo': {'type': 'string'},
+        'commit': {'type': 'string'},
+        'reportfile': {'type': 'media'},
+        'reportstring': {'type': 'string'},
         'report': {'type': 'string'},
-        'timestamp': {'type': 'string'}
     }
 }
 
