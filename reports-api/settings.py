@@ -18,39 +18,6 @@ ITEM_METHODS = ['GET', 'PATCH', 'PUT', 'DELETE']
 PUBLIC_METHODS = ['GET', 'POST', 'PATCH', 'PUT', 'DELETE']
 PUBLIC_ITEM_METHODS = ['GET', 'PATCH', 'PUT', 'POST', 'DELETE']
 
-# reports = {
-#     'schema': {
-#         'build': {'type': 'string'},
-#         'branch': {'type': 'string'},
-#         'repo': {'type': 'string'},
-#         'report': {
-#             'type': 'dict',
-#             'schema': {
-#                 'tests': {'type': 'number'},
-#                 'testsuite': {
-#                     'type': 'list',
-#                     'schema': {
-#                         'type': 'dict',
-#                         'schema': {
-#                             'classname': {'type': 'string'},
-#                             'testcase': {'type': 'string'},
-#                             'name': {'type': 'string'},
-#                             'failure': {
-#                                 'type': 'dict',
-#                                 'required': False,
-#                                 'schema': {
-#                                     'failure': {'type': 'string'},
-#                                     'type': {'type': 'string'}
-#                                 }
-#                             }
-#                         }
-#                     }
-#                 }
-#             }
-#         },
-#         'timestamp': {'type': 'string'}
-#     }
-# }
 
 reports = {
     'schema': {
@@ -58,9 +25,7 @@ reports = {
         'branch': {'type': 'string'},
         'repo': {'type': 'string'},
         'commit': {'type': 'string'},
-        'reportfile': {'type': 'media'},
-        'reportstring': {'type': 'string'},
-        'report': {'type': 'string'},
+        'report': {'type': 'string'}
     }
 }
 

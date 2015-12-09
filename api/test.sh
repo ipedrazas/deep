@@ -19,9 +19,16 @@ export APIHOST=deep-api.ipedrazas.k8s.co.uk:5000
 http POST $APIHOST/components < components.json
 
 
+export APIHOST=deep-api.ipedrazas.k8s.co.uk:5000
+http POST $APIHOST/applications < applications.json
+
+export APIHOST=deep-api.ipedrazas.k8s.co.uk:5000
+http POST $APIHOST/healthchecks < healthchecks.json
+
+
 TS=$(date +%s)
 REPORT=$(cat reports.xml)
 curl -i \
     -H "Content-Type: application/json" \
-    -X POST -d '{build":"30", "branch":"Tip 3", "repo":"Target 3", "report":"$REPORT", "timestamp": "$TS"}' \
+    -X POST -d '{build":"21", "branch":"master", "repo":"deep", "report":"$REPORT", "timestamp": "$TS"}' \
     http://deep-api.ipedrazas.k8s.co.uk:5000/reports

@@ -3,17 +3,13 @@ from flask.ext.cors import CORS
 import json
 from flask import request
 # import StringIO
-# from xml2json import xml_to_json
+from xml2json import xml_to_json
 
 
 def before_insert(resource_name, items):
-    file = request.files['report']
-    contents = file.stream.read()
-    content = contents.decode('utf-8')
-    print content
     for item in items:
-        item['data'] = content
-
+        item['report'] = xml_to_json(item['report'])
+        print str(item)
 
 app = Eve()
 cors = CORS(app)
