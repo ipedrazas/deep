@@ -40,15 +40,15 @@ publish:
 
     branch: master
 
-deploy:
-  kubernetes:
-    image: ipedrazas/drone-kubernetes
-    replicationcontrollers:
-      - kubernetes/deep-api-rc.json
-      - kubernetes/deep-reports-rc.json
-    services: []
-    token: $$TOKEN
-    apiserver: $$APISERVER
-    namespace: default
-    webhook: http://deep-api.ipedrazas.k8s.co.uk:5000/deploys
-    webhook_token: 12345abcdf
+# deploy:
+#   kubernetes:
+#     image: ipedrazas/drone-kubernetes
+#     replicationcontrollers:
+#       - kubernetes/deep-api-rc.json
+#       - kubernetes/deep-reports-rc.json
+#     services: []
+#     token: $$TOKEN
+#     apiserver: $$APISERVER
+#     namespace: default
+#     webhook: http://deep-api.ipedrazas.k8s.co.uk:5000/deploys
+#     webhook_token: 12345abcdf
